@@ -43,11 +43,13 @@
 
     <!-- Main -->
      <main id="app" class="main-content">
-        <h1>{{ product }}</h1>
+        <h1>{{ event }}</h1>
 
         <section class="card">
             <!-- Vue v-bind Directive: -->
-             =<img v-bind:src="image" alt="Olympic Volleybal" class="img-centre" />
+             <img v-bind:src="image" alt="Olympic Volleybal" class="img-centre" />
+
+            <p>{{ event }} {{ overview }}. To learn more visit <a v-bind:href="url">2024 Olympic</a> </p>
         </section>
      </main>
     </div>

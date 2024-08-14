@@ -1,6 +1,6 @@
 /* Gradient background animation for the entire element of all pages with class 'gradient-background' */
 .gradient-background {
-    background: linear-gradient(300deg, #00ffa2, #e1ebc2, hsl(178, 80%, 69%));
+    background: linear-gradient(300deg, #212221, #151514, hsl(178, 80%, 69%));
     background-size: 180% 180%;
     animation: gradient-animation 18s ease infinite;
   }

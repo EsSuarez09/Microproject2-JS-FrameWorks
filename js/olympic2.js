@@ -6,11 +6,12 @@ const app = Vue.createApp({
     data(){
         return{
             //1. adding the text
-            product: "2024 Womens Volleybal Olympic",
-            description: "comes with different options and colors",
+            event: "2024 Women's Volleyball Olympics.",
+            overview: "Players from various countries competed in the event held in Paris.",
 
             // add our image file path:
             image: "img/olympic.jpg",
+            url:"https://www.cbc.ca/sports/olympics/summer/volleyball"
         }   
     } // end data()
 });

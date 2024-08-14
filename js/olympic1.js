@@ -5,8 +5,8 @@
 const app = Vue.createApp({
     data(){
         return{
-            title: "Vue Frameworks",
-            mainPara: "Learning about vue"
+            subject: "Volleyball Sports",
+            headline: "2024 Women's Volleyball Olympics"
         }
     } // end data()
 });
