@@ -23,4 +23,34 @@
     background-color: #f0f8ff;
     cursor: not-allowed;
 }
+
+
+
+/* Add padding to the body to ensure content doesn't hide behind the fixed header */
+body {
+    padding-top: 60px; /* Adjust this based on your header's height */
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 1000; /* Keeps it above other content */
+    border-top: 1px solid #e7e7e7; /* Adds a border to separate the footer */
+}
+
+/* Add padding to the body to ensure content doesn't overlap with the footer */
+body {
+    padding-bottom: 60px; /* Adjust this based on your footer's height */
+}
+
+/* Main content adjustments */
+main {
+    margin-top: 60px; /* To make sure the content does not overlap with the fixed header */
+    margin-bottom: 60px; /* To make sure the content does not overlap with the fixed footer */
+    padding: 20px;
+}
+
   

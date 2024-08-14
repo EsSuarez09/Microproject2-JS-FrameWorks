@@ -15,3 +15,4 @@ const app = Vue.createApp({
         }   
     } // end data()
 });
+app.mount("#app");
