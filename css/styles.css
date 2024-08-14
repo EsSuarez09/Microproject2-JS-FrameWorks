@@ -17,4 +17,10 @@
       background-position: 0% 50%;
     }
   }
+
+
+  div.buttons button.disabled-btn {
+    background-color: #f0f8ff;
+    cursor: not-allowed;
+}
   
