@@ -25,10 +25,6 @@
           class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
           <!-- Logo and title of the web page -->
           <a href="/"class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-            <!-- SVG icon -->
-            <svg class="bi me-2" width="40" height="32">
-              <use xlink:href="#bootstrap"></use>
-            </svg>
             <!-- Web page title -->
             <span class="fs-4">Sports Web Page</span>
           </a>
@@ -40,61 +36,60 @@
           </ul>
         </header>
 
-        <!-- Main -->
         <main id="app" class="main-content">
-          <h1>{{ event }}</h1>
-
+          <h1>{{ subject }}</h1>
+          <h2>{{ headline2 }}</h2>
+        
+          <section class="players-comparison">
+            <!-- Display USA Player -->
+            <div class="player left">
+              <img v-bind:src="usaImage" alt="USA Player" class="player-img" />
+              <h3>USA Player</h3>
+            </div>
+        
+            <!-- Display Italy Player -->
+            <div class="player right">
+              <img v-bind:src="italyImage" alt="Italy Player" class="player-img" />
+              <h3>Italy Player</h3>
+            </div>
+          </section>
+        
           <section class="card">
-            <!-- Vue v-bind Directive: -->
-            <img
-              v-bind:src="image"
-              alt="Olympic Volleybal"
-              class="img-centre"
-            />
-
             <p>
               {{ event }} {{ overview }}. To learn more visit
               <a v-bind:href="url">2024 Olympic</a>
             </p>
-
+        
             <div class="score status">
-              <!-- v-if -->
               <span v-if="italy">Italy</span>
               <span v-else>USA</span>
-
-              <!-- v-Show -->
+        
               <p v-show="italy">is won</p>
-
-             
+        
               <p v-if="score === 25">Italy won the 1st round!</p>
               <p v-else-if="score > 12">Italy is in the lead, keep going!</p>
               <p v-else-if="score > 0 && score <= 12">The game is intense, stay tuned!</p>
               <p v-else>Waiting for the game to start...</p>
-
             </div>
-            <div>
-            
-                <!-- Vue v-for Directive:-->
-                 <ul>
-                    <!-- for in loop -->
-                    <li v-for="player in actions">{{ player }}</li>
         
-                 </ul>
+            <div>
+              <ul>
+                <li v-for="player in actions">{{ player }}</li>
+              </ul>
+            </div>
+        
+            <div class="cart">
+              {{ cart }}
+            </div>
+        
+            <div class="buttons">
+              <button class="button" @click="addToCart" :class="{ 'disabled-btn': !italy}">Add to Cart</button>
+              <button class="button" @click="removeFromCart">Remove from Cart</button>
             </div>
           </section>
-
-          <div class="cart">
-            {{ cart }}
-          </div>
-          <div class="buttons">
-            <button class="button" @:click="addToCart" :class="{ 'disabled-btn': !italy}">Add to Cart</button>
-            <button class="button" @click="removeFromCart">Remove from Cart</button>
-
-          </div>
-
         </main>
-      </div>
-    </section>
+        
+   
     <!-- Footer section -->
     <footer class="py-3 my-4">
       <!-- Footer navigation menu -->
@@ -113,8 +108,9 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
     <!-- JS link here -->
-    <script src="js/olympic3.js"></script>
+    <script src="js/olympic2.js"></script>
 
-    
+  </div>
+</section>
   </body>
 </html>

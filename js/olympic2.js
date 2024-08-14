@@ -3,16 +3,32 @@
 // starting Vue Application code
 
 const app = Vue.createApp({
-    data(){
-        return{
-            //1. adding the text
-            event: "2024 Women's Volleyball Olympics.",
-            overview: "Players from various countries competed in the event held in Paris.",
+    data() {
+      return {
+        subject: "Women's Volleyball Olympics",
+        headline2: "USA vs Italy",
+        event: "Olympics 2024",
+        overview: "The much-awaited match between USA and Italy",
+        url: "https://www.cbc.ca/sports/olympics/summer/volleyball",
+        score: 20,
+        italy: true,
+        actions: ["Spike", "Block", "Serve", "Set", "Dig"],
+        cart: 0,
+        usaImage: "img/usa_silver.jpg",  // Replace with the correct path
+        italyImage: "img/italy.jpg",  // Replace with the correct path
+      };
+    },
+    methods: {
+      addToCart() {
+        this.cart++;
+      },
+      removeFromCart() {
+        if (this.cart > 0) {
+          this.cart--;
+        }
+      },
+    },// end data()
+  })
 
-            // add our image file path:
-            image: "img/olympic.jpg",
-            url:"https://www.cbc.ca/sports/olympics/summer/volleyball"
-        }   
-    } // end data()
-});
-app.mount("#app");
+  app.mount("#app");
+  

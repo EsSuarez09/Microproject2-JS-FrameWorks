@@ -40,16 +40,19 @@
     <!-- Main -->
      <main id="app" class="main-content">
         <h1>{{ subject }}</h1>
-        <p>{{ headline }}</p>
+        <h2>{{ headline }}</h2>
+
+        <section class="card">
+          <img v-bind:src="image" alt="Olympic Volleybal" class="img-centre"/>
+        </section>
      </main>
       
-    </div>
-  </section>
+  
   <!-- Footer section -->
   <footer class="py-3 my-4">
     <!-- Footer navigation menu -->
     <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-      <li class="nav-item"><a href="sport1.html" class="nav-link active" aria-current="page">Home</a></li>
+      <li class="nav-item"><a href="sport" class="nav-link active" aria-current="page">Home</a></li>
       <li class="nav-item"><a href="sport2.html" class="nav-link">Battle</a></li>
       <li class="nav-item"><a href="sport3.html" class="nav-link">Contact</a></li>
     </ul>
@@ -62,6 +65,7 @@
   <!-- JS link here -->
   <script src="js/olympic1.js"></script>
 
-
+</div>
+</section>
 </body>
 </html>

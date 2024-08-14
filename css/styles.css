@@ -1,6 +1,6 @@
 /* Gradient background animation for the entire element of all pages with class 'gradient-background' */
 .gradient-background {
-    background: linear-gradient(300deg, #212221, #151514, hsl(178, 80%, 69%));
+    background: linear-gradient(300deg, #7bd27b, #44c4d8, hsl(178, 80%, 69%));
     background-size: 180% 180%;
     animation: gradient-animation 18s ease infinite;
   }
@@ -24,33 +24,84 @@
     cursor: not-allowed;
 }
 
+/* page 1 */
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 50%; /* Adjust this value to control the width */
+    height: auto; /* This ensures the aspect ratio is maintained */
+    border-radius: 10px; /* Optional: adds rounded corners */
+  }
 
 
-/* Add padding to the body to ensure content doesn't hide behind the fixed header */
-body {
-    padding-top: 60px; /* Adjust this based on your header's height */
+/* Custom Font Style for h1 and h2 */
+h1 {
+    font-size: 3rem; /* Adjust the size as needed */
+    font-weight: 700; /* Bold font */
+    text-align: center; /* Center align the text */
+    color: #333; /* Dark gray color */
+    margin-bottom: 20px; /* Add some space below the h1 */
+}
+  
+h2 {
+    font-size: 2.5rem; /* Slightly smaller than h1 */
+    font-weight: 600; /* Semi-bold font */
+    text-align: center; /* Center align the text */
+    color: #333; /* Dark gray color */
+    margin-bottom: 20px; /* Add some space below the h2 */
+    margin-top: 20px; /* Adjust this value to control spacing between h1 and h2 */
+}
+  
+/* Optional: Additional styles for responsiveness */
+@media (max-width: 768px) {
+    h1 {
+      font-size: 2.5rem;
+    }
+  
+    h2 {
+      font-size: 2rem;
+    }
 }
 
-/* Footer */
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: white;
-    z-index: 1000; /* Keeps it above other content */
-    border-top: 1px solid #e7e7e7; /* Adds a border to separate the footer */
-}
 
-/* Add padding to the body to ensure content doesn't overlap with the footer */
-body {
-    padding-bottom: 60px; /* Adjust this based on your footer's height */
-}
+/* page 2 */
 
-/* Main content adjustments */
-main {
-    margin-top: 60px; /* To make sure the content does not overlap with the fixed header */
-    margin-bottom: 60px; /* To make sure the content does not overlap with the fixed footer */
-    padding: 20px;
-}
+.players-comparison {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px; /* Adds space below the comparison section */
+  }
+  
+  .player {
+    flex: 1;
+    text-align: center; /* Centers the text under each player */
+  }
+  
+  .player.left {
+    margin-right: 20px; /* Adds space between the players */
+    text-align: center; /* Center-aligns the text under each player */
+  }
+  
+  .player.right {
+    margin-left: 20px; /* Adds space between the players */
+  }
+  
+  .player-img {
+    max-width: 100%;
+    border-radius: 10px; /* Optional: adds rounded corners to the images */
+    width: 500px; /* Set the width to 300px */
+    height: 300px; /* Set the height to 200px */
+    object-fit: cover; /* Ensures the image covers the container without distortion */
+    
+  }
 
+  
+  h3 {
+    margin-top: 10px;
+    font-size: 1.5rem; /* Adjust the size of the player names */
+    color: #333; /* Darker color for the player names */
+  }
   
