@@ -2,6 +2,6 @@
 
 # Authors: "Computer Programming Students"
 
-- Maria Estrella
-- Yuka Nagase
-- Kevin sempertegui
+- Maria Estrella Suarez
+- Yuka Nagase 
+- Kevin sempertegui 
