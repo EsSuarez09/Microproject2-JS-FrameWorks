@@ -1,5 +1,5 @@
 
-
+// document.getElementById("year").innerText = new Date().getFullYear();
 // starting Vue Application code
 
 const app = Vue.createApp({
