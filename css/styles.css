@@ -182,8 +182,8 @@ h3 {
 
 /* Active button styling */
 .button.active {
-    background-color: #43a1df; /* Orange background for active button */
-    border: 2px solid #d35400; /* Darker orange border for active button */
+    background-color: #40e9e3; /* Orange background for active button */
+    border: 2px solid #ffffff; /* Darker orange border for active button */
 }
 
 /* Statistics section styling */
