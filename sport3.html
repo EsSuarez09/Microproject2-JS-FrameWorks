@@ -50,10 +50,11 @@
         </section>
 
         <!-- Buttons to select USA or Italy -->
-        <div class="buttons">
-          <button class="button" @click="showUSAStats">USA Player</button>
-          <button class="button" @click="showItalyStats">Italy Player</button>
-        </div>
+        <!-- Buttons to select USA or Italy -->
+<div class="buttons">
+  <button class="button" :class="{ 'active': activeButton === 'usa' }" @click="showUSAStats">USA Player</button>
+  <button class="button" :class="{ 'active': activeButton === 'italy' }" @click="showItalyStats">Italy Player</button>
+</div>
 
         <!-- Display the selected player's statistics -->
         <div v-if="showStats" class="stats">

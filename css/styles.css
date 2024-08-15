@@ -180,6 +180,12 @@ h3 {
     border: 2px solid #4CAF50; /* Add a green border on hover */
 }
 
+/* Active button styling */
+.button.active {
+    background-color: #43a1df; /* Orange background for active button */
+    border: 2px solid #d35400; /* Darker orange border for active button */
+}
+
 /* Statistics section styling */
 .stats {
     text-align: center; /* Center the stats */
