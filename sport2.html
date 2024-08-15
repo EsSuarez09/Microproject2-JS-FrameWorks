@@ -40,6 +40,12 @@
           <h1>{{ subject }}</h1>
           <h2>{{ headline2 }}</h2>
         
+          <!-- New Section for the Match Image -->
+          <section class="match-image">
+          <img v-bind:src="matchBannerImage" alt="USA vs Italy Match" class="match-banner"/>
+          <p class="match-description">The Road to Paris: A Fierce Battle Between USA and Italy in Women's Volleyball</p>
+          </section>
+        
           <section class="players-comparison">
             <!-- Display USA Player -->
             <div class="player left">
@@ -54,39 +60,14 @@
             </div>
           </section>
         
+          
           <section class="card">
-            <p>
+            <h5>
               {{ event }} {{ overview }}. To learn more visit
               <a v-bind:href="url">2024 Olympic</a>
-            </p>
-        
-            <div class="score status">
-              <span v-if="italy">Italy</span>
-              <span v-else>USA</span>
-        
-              <p v-show="italy">is won</p>
-        
-              <p v-if="score === 25">Italy won the 1st round!</p>
-              <p v-else-if="score > 12">Italy is in the lead, keep going!</p>
-              <p v-else-if="score > 0 && score <= 12">The game is intense, stay tuned!</p>
-              <p v-else>Waiting for the game to start...</p>
-            </div>
-        
-            <div>
-              <ul>
-                <li v-for="player in actions">{{ player }}</li>
-              </ul>
-            </div>
-        
-            <div class="cart">
-              {{ cart }}
-            </div>
-        
-            <div class="buttons">
-              <button class="button" @click="addToCart" :class="{ 'disabled-btn': !italy}">Add to Cart</button>
-              <button class="button" @click="removeFromCart">Remove from Cart</button>
-            </div>
+            </h5>
           </section>
+          
         </main>
         
    
