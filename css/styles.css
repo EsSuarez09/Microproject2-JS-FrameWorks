@@ -31,8 +31,7 @@ img {
     margin-right: auto;
     max-width: 50%; /* Adjust this value to control the width */
     height: auto; /* This ensures the aspect ratio is maintained */
-    border-radius: 10px; /* Optional: adds rounded corners */
-    
+    border-radius: 10px; /* Adds rounded corners */
 }
 
 /* Custom font styles for headings */
@@ -79,13 +78,13 @@ h2 {
 
 .player1-img {
     max-width: 100%;
-    border-radius: 10px; /* Optional: adds rounded corners to the images */
+    border-radius: 10px; /* Adds rounded corners to the images */
     width: 600px; /* Set the width to 600px */
     height: 300px; /* Set the height to 300px */
     object-fit: cover; /* Ensures the image covers the container without distortion */
 }
 
-
+/* Player name styling */
 h3 {
     margin-top: 10px;
     font-size: 1.5rem; /* Adjust the size of the player names */
@@ -98,7 +97,7 @@ h3 {
     color: #333; /* Darker color for better contrast */
     margin-top: 10px;
     text-align: center; /* Center the text */
-    font-weight: 600; /* Optional: make the text semi-bold */
+    font-weight: 600; /* Make the text semi-bold */
     margin: 30px 0; /* Add space above and below */
 }
 
@@ -107,7 +106,7 @@ h3 {
     text-align: center; /* Center the text */
     font-size: 1.25rem; /* Adjust the font size as needed */
     margin-top: 20px; /* Add some space above */
-    color: #333; /* Optional: Darker color for better readability */
+    color: #333; /* Darker color for better readability */
 }
 
 /* Page 3: Player List Section */
@@ -115,8 +114,6 @@ h3 {
     margin-top: 20px;
     text-align: center;
 }
-
-
 
 .players-row {
     display: flex;
@@ -126,7 +123,6 @@ h3 {
     align-items: center; /* Align items (images and bullets) vertically */
 }
 
-
 .player-card {
     display: flex;
     flex-direction: column;
@@ -135,23 +131,20 @@ h3 {
     margin: 10px;
 }
 
-
-
+/* Player name styling */
 .player-list p {
     margin: 0;
     font-size: 1.2em; /* Increase font size for player names */
     text-align: center; /* Center-align the player names */
 }
 
-
+/* Player image styling */
 .player-img {
     width: 200px; /* Increase the width to make the images larger */
     height: 200px; /* Increase the height accordingly */
     object-fit: cover; /* Ensure the image covers the area without distortion */
     border-radius: 10px; /* Add rounded corners to images */
 }
-
-
 
 /* Button styling */
 .buttons {
@@ -182,8 +175,8 @@ h3 {
 
 /* Active button styling */
 .button.active {
-    background-color: #40e9e3; /* Orange background for active button */
-    border: 2px solid #ffffff; /* Darker orange border for active button */
+    background-color: #40e9e3; /* Cyan background for active button */
+    border: 2px solid #ffffff; /* White border for active button */
 }
 
 /* Statistics section styling */
@@ -192,7 +185,196 @@ h3 {
     margin-top: 20px; /* Add space above the stats */
 }
 
+.stats ul {
+    list-style-position: inside; /* Make the bullet points appear inside the list */
+    padding-left: 0; /* Remove any default padding */
+}
+/* Gradient background animation for all pages with class 'gradient-background' */
+.gradient-background {
+    background: linear-gradient(300deg, hsl(0, 0%, 5%), #ebf6f0, hwb(0 24% 76%));
+    background-size: 180% 180%;
+    animation: gradient-animation 18s ease infinite;
+}
 
+/* Keyframes for the gradient background animation */
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Styles for disabled buttons */
+.buttons button.disabled-btn {
+    background-color: #f0f8ff;
+    cursor: not-allowed;
+}
+
+/* General image styling */
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 50%; /* Adjust this value to control the width */
+    height: auto; /* This ensures the aspect ratio is maintained */
+    border-radius: 10px; /* Adds rounded corners */
+}
+
+/* Custom font styles for headings */
+h1, h2 {
+    text-align: center; /* Center align the text */
+    color: #333; /* Dark gray color */
+    margin-bottom: 20px; /* Add some space below the headings */
+}
+
+h1 {
+    font-size: 3rem; /* Adjust the size as needed */
+    font-weight: 700; /* Bold font */
+}
+
+h2 {
+    font-size: 2.5rem; /* Slightly smaller than h1 */
+    font-weight: 600; /* Semi-bold font */
+    margin-top: 20px; /* Adjust this value to control spacing between h1 and h2 */
+}
+
+/* Responsive font sizes for smaller screens */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Page 2: Player Comparison Section */
+.players-comparison {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px; /* Adds space below the comparison section */
+}
+
+.player {
+    flex: 1;
+    text-align: center; /* Centers the text under each player */
+    margin: 0 20px; /* Adds space between the players */
+}
+
+.player1-img {
+    max-width: 100%;
+    border-radius: 10px; /* Adds rounded corners to the images */
+    width: 600px; /* Set the width to 600px */
+    height: 300px; /* Set the height to 300px */
+    object-fit: cover; /* Ensures the image covers the container without distortion */
+}
+
+/* Player name styling */
+h3 {
+    margin-top: 10px;
+    font-size: 1.5rem; /* Adjust the size of the player names */
+    color: #333; /* Darker color for the player names */
+}
+
+/* Match description text */
+.match-description {
+    font-size: 1.5rem; /* Increase the font size */
+    color: #333; /* Darker color for better contrast */
+    margin-top: 10px;
+    text-align: center; /* Center the text */
+    font-weight: 600; /* Make the text semi-bold */
+    margin: 30px 0; /* Add space above and below */
+}
+
+/* Centered text for card h5 */
+.card h5 {
+    text-align: center; /* Center the text */
+    font-size: 1.25rem; /* Adjust the font size as needed */
+    margin-top: 20px; /* Add some space above */
+    color: #333; /* Darker color for better readability */
+}
+
+/* Page 3: Player List Section */
+.player-list {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.players-row {
+    display: flex;
+    justify-content: center; /* Center the player images and bullets horizontally */
+    flex-wrap: nowrap; /* Prevent wrapping to the next line */
+    gap: 20px; /* Add space between each player image */
+    align-items: center; /* Align items (images and bullets) vertically */
+}
+
+.player-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center-align the image and name */
+    text-align: center;
+    margin: 10px;
+}
+
+/* Player name styling */
+.player-list p {
+    margin: 0;
+    font-size: 1.2em; /* Increase font size for player names */
+    text-align: center; /* Center-align the player names */
+}
+
+/* Player image styling */
+.player-img {
+    width: 200px; /* Increase the width to make the images larger */
+    height: 200px; /* Increase the height accordingly */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+    border-radius: 10px; /* Add rounded corners to images */
+}
+
+/* Button styling */
+.buttons {
+    display: flex;
+    justify-content: center; /* Center the buttons horizontally */
+    margin-top: 20px; /* Add some space above the buttons */
+}
+
+.button {
+    background-color: #4CAF50; /* Green background */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 15px 32px; /* Add padding */
+    text-align: center; /* Center text */
+    text-decoration: none; /* Remove underline */
+    font-size: 16px; /* Increase font size */
+    margin: 4px 2px; /* Add some margin between buttons */
+    transition-duration: 0.4s; /* Make transition smoother */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    border-radius: 12px; /* Round the corners */
+}
+
+.button:hover {
+    background-color: white; /* White background on hover */
+    color: black; /* Black text on hover */
+    border: 2px solid #4CAF50; /* Add a green border on hover */
+}
+
+/* Active button styling */
+.button.active {
+    background-color: #40e9e3; /* Cyan background for active button */
+    border: 2px solid #ffffff; /* White border for active button */
+}
+
+/* Statistics section styling */
+.stats {
+    text-align: center; /* Center the stats */
+    margin-top: 20px; /* Add space above the stats */
+}
 
 .stats ul {
     list-style-position: inside; /* Make the bullet points appear inside the list */
