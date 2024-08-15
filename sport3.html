@@ -1,121 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Character set for the document -->
-    <meta charset="UTF-8" />
-    <!-- Ensures proper rendering and touch zooming on mobile devices -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Title of the page -->
-    <title>Contact Page</title>
-    <!-- Bootstrap CSS for styling -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
-    <!-- Custom stylesheet -->
-    <link rel="stylesheet" href="css/styles.css" />
-  </head>
-  <body class="gradient-background">
-    <section>
-      <div class="container">
-        <!-- Header with navigation menu -->
-        <header
-          class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-          <!-- Logo and title of the web page -->
-          <a href="/"class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-            <!-- SVG icon -->
-            <svg class="bi me-2" width="40" height="32">
-              <use xlink:href="#bootstrap"></use>
-            </svg>
-            <!-- Web page title -->
-            <span class="fs-4">Sports Web Page</span>
-          </a>
-          <!-- Navigation menu -->
-          <ul class="nav nav-pills">
-            <li class="nav-item"><a href="sport1.html" class="nav-link">Home</a></li>
-            <li class="nav-item"><a href="sport2.html" class="nav-link">Battle</a></li>
-            <li class="nav-item"><a href="sport3.html" class="nav-link active" aria-current="page">Contact</a>
-            </li>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Match Results</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+  />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="gradient-background">
+  <section>
+    <div class="container">
+      <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+        <a href="/"class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+          <span class="fs-4">Sports Web Page</span>
+        </a>
+        <ul class="nav nav-pills">
+          <li class="nav-item"><a href="sport1.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="sport2.html" class="nav-link">Battle</a></li>
+          <li class="nav-item"><a href="sport3.html" class="nav-link active" aria-current="page">Match Results</a></li>
+        </ul>
+      </header>
+
+      <main id="app" class="main-content">
+        <h1>Match Results</h1>
+        <h2>{{ event }}</h2>
+
+        <!-- Display the winning team's image -->
+        <section class="winner-image">
+          <img v-bind:src="image" alt="Winning Team" class="match-banner"/>
+        </section>
+
+        <!-- Display the country that won -->
+        <h2>{{ italy ? 'Italy' : 'USA' }} Won!</h2>
+
+        <!-- Display the list of Italian players with images horizontally -->
+        <section class="player-list">
+          <h3>Italy's Top Players</h3>
+          <div class="players-row">
+            <div v-for="player in players" :key="player.name" class="player-card">
+              <img :src="player.img" :alt="player.name" class="player-img"/>
+              <p>{{ player.name }}</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Buttons to select USA or Italy -->
+        <div class="buttons">
+          <button class="button" @click="showUSAStats">USA Player</button>
+          <button class="button" @click="showItalyStats">Italy Player</button>
+        </div>
+
+        <!-- Display the selected player's statistics -->
+        <div v-if="showStats" class="stats">
+          <h3>{{ selectedPlayer }} Statistics</h3>
+          <ul>
+            <li>Serves: {{ selectedStats.serves }}</li>
+            <li>Spikes: {{ selectedStats.spikes }}</li>
+            <li>Blocks: {{ selectedStats.blocks }}</li>
+            <li>Digs: {{ selectedStats.digs }}</li>
+            <li>Sets: {{ selectedStats.sets }}</li>
           </ul>
-        </header>
+        </div>
+      </main>
 
-        <!-- Main -->
-        <main id="app" class="main-content">
-          <h1>{{ event }}</h1>
+      <footer class="py-3 my-4">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+          <li class="nav-item"><a href="sport1.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="sport2.html" class="nav-link">Battle</a></li>
+          <li class="nav-item"><a href="sport3.html" class="nav-link active" aria-current="page">Match Results</a></li>
+        </ul>
+        <p class="text-center text-body-secondary">
+          © 2024 Ilac College - Group 18 Micro Project #2 by Maria, Yuka, and Kevin
+        </p>
+      </footer>
+    </div>
+  </section>
 
-          <section class="card">
-            <!-- Vue v-bind Directive: -->
-            <img
-              v-bind:src="image"
-              alt="Olympic Volleybal"
-              class="img-centre"
-            />
-
-            <p>
-              {{ event }} {{ overview }}. To learn more visit
-              <a v-bind:href="url">2024 Olympic</a>
-            </p>
-
-            <div class="score status">
-              <!-- v-if -->
-              <span v-if="italy">Italy</span>
-              <span v-else>USA</span>
-
-              <!-- v-Show -->
-              <p v-show="italy">is won</p>
-
-             
-              <p v-if="score === 25">Italy won the 1st round!</p>
-              <p v-else-if="score > 12">Italy is in the lead, keep going!</p>
-              <p v-else-if="score > 0 && score <= 12">The game is intense, stay tuned!</p>
-              <p v-else>Waiting for the game to start...</p>
-
-            </div>
-            <div>
-            
-                <!-- Vue v-for Directive:-->
-                 <ul>
-                    <!-- for in loop -->
-                    <li v-for="player in actions">{{ player }}</li>
-        
-                 </ul>
-            </div>
-          </section>
-
-          <div class="cart">
-            {{ cart }}
-          </div>
-          <div class="buttons">
-            <button class="button" @:click="addToCart" :class="{ 'disabled-btn': !italy}">Add to Cart</button>
-            <button class="button" @click="removeFromCart">Remove from Cart</button>
-
-          </div>
-
-        </main>
-   
-    <!-- Footer section -->
-    <footer class="py-3 my-4">
-      <!-- Footer navigation menu -->
-      <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-        <li class="nav-item"><a href="sport1.html" class="nav-link">Home</a></li>
-            <li class="nav-item"><a href="sport2.html" class="nav-link">Battle</a></li>
-            <li class="nav-item"><a href="sport3.html" class="nav-link active" aria-current="page">Contact</a></li>
-      </ul>
-      <!-- Footer copyright information -->
-      <p class="text-center text-body-secondary">
-        © 2024 Ilac College - Group 18 Micro Project #2 by Maria, Yuka, and
-        Kevin
-      </p>
-    </footer>
-    <!-- Vue link here -->
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-
-    <!-- JS link here -->
-    <script src="js/olympic3.js"></script>
-</div>
-</section>
-    
-  </body>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="js/olympic3.js"></script>
+</body>
 </html>

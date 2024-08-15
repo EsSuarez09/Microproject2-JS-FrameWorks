@@ -21,16 +21,7 @@ const app = Vue.createApp({
         matchBannerImage: "img/italyVsUsa.jpeg"  // New property for the match banner image
       };
     },
-    methods: {
-      addToCart() {
-        this.cart++;
-      },
-      removeFromCart() {
-        if (this.cart > 0) {
-          this.cart--;
-        }
-      },
-    },// end data()
+    
   })
 
   app.mount("#app");
